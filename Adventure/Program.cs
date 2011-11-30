@@ -20,65 +20,21 @@ namespace Adventure
                 Console.Write(">");
                 currentLine = Console.ReadLine();
 
-                ICommand cmd = cmdList.FirstOrDefault(m => m.IsValid(currentLine));
-
+                //ICommand cmd = cmdList.FirstOrDefault(m => m.IsValid(currentLine));
+                ICommand cmd = null;
+                foreach (ICommand command in cmdList)
+                {
+                    bool isValid = command.IsValid(currentLine);
+                    if (isValid)
+                    {
+                        cmd = command;
+                        break;
+                    }
+                }
+                
+                
                 if (cmd != null) cmd.Execute(currentLine);
             } while (currentLine != "exit");
-        }
-    }
-
-    interface ICommand
-    {
-
-        bool IsValid(string cmd);
-        void Execute(string cmd);
-    }
-    class LaughCommand : ICommand
-    {
-
-        public bool IsValid(string cmd)
-        {
-            return cmd == "lol";
-        }
-
-        public void Execute(string cmd)
-        {
-            Console.WriteLine("You laugh out loud!");
-        }
-    }
-
-    class DanceCommand : ICommand
-    {
-        public bool IsValid(string cmd)
-        {
-            return cmd == "dance";
-        }
-        public void Execute(string cmd)
-        {
-            Console.WriteLine("You get jiggy with it!");
-        }
-       
-    }
-    class PrayCommand : ICommand
-    {
-        public bool IsValid(string cmd)
-        {
-            return cmd == "pray";
-        }
-        public void Execute(string cmd)
-        {
-            Console.WriteLine("You pray for God's guidance.");
-        }
-    }
-    class StretchCommand : ICommand
-    {
-        public bool IsValid(string cmd)
-        {
-            return cmd == "stretch";
-        }
-        public void Execute(string cmd)
-        {
-            Console.WriteLine("You limber up and get ready for some killin'.");
         }
     }
 }
