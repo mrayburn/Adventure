@@ -12,6 +12,9 @@ namespace Adventure
             string currentLine;
             List<ICommand> cmdList = new List<ICommand>();
             cmdList.Add(new LaughCommand());
+            cmdList.Add(new DanceCommand());
+            cmdList.Add(new PrayCommand());
+            cmdList.Add(new StretchCommand());
             do
             {
                 Console.Write(">");
@@ -19,7 +22,7 @@ namespace Adventure
 
                 ICommand cmd = cmdList.FirstOrDefault(m => m.IsValid(currentLine));
 
-                if(cmd != null) cmd.Execute(currentLine);
+                if (cmd != null) cmd.Execute(currentLine);
             } while (currentLine != "exit");
         }
     }
@@ -30,7 +33,6 @@ namespace Adventure
         bool IsValid(string cmd);
         void Execute(string cmd);
     }
-
     class LaughCommand : ICommand
     {
 
@@ -42,6 +44,41 @@ namespace Adventure
         public void Execute(string cmd)
         {
             Console.WriteLine("You laugh out loud!");
+        }
+    }
+
+    class DanceCommand : ICommand
+    {
+        public bool IsValid(string cmd)
+        {
+            return cmd == "dance";
+        }
+        public void Execute(string cmd)
+        {
+            Console.WriteLine("You get jiggy with it!");
+        }
+       
+    }
+    class PrayCommand : ICommand
+    {
+        public bool IsValid(string cmd)
+        {
+            return cmd == "pray";
+        }
+        public void Execute(string cmd)
+        {
+            Console.WriteLine("You pray for God's guidance.");
+        }
+    }
+    class StretchCommand : ICommand
+    {
+        public bool IsValid(string cmd)
+        {
+            return cmd == "stretch";
+        }
+        public void Execute(string cmd)
+        {
+            Console.WriteLine("You limber up and get ready for some killin'.");
         }
     }
 }
