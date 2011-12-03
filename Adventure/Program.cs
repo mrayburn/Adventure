@@ -14,7 +14,7 @@ namespace Adventure
             cmdList.Add(new DanceCommand());
             cmdList.Add(new PrayCommand());
             cmdList.Add(new StretchCommand());
-            GameLoop game = new GameLoop(cmdList);
+            GameLoop game = new GameLoop(new ConsoleFacade(), cmdList);
             game.RunLoop();
         }
     }
