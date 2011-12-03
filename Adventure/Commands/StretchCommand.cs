@@ -4,13 +4,12 @@ using System.Linq;
 
 namespace Adventure
 {
-    class StretchCommand : ICommand
+    class StretchCommand : BaseSimpleCommand
     {
-        public bool IsValid(string cmd)
-        {
-            return cmd.ToLower() == "stretch".ToLower();
-        }
-        public void Execute(string cmd)
+        public StretchCommand()
+            : base("stretch") { }
+            
+        public override void Execute(string cmd)
         {
             Console.WriteLine("You limber up and get ready for some killin'.");
         }

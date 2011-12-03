@@ -43,7 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Commands\BaseSimpleCommand.cs" />
     <Compile Include="Commands\DanceCommand.cs" />
+    <Compile Include="GameLoop.cs" />
     <Compile Include="ICommand.cs" />
     <Compile Include="Commands\LaughCommand.cs" />
     <Compile Include="Commands\PrayCommand.cs" />

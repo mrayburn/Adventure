@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace Adventure
 {
-    interface ICommand
+    public interface ICommand
     {
 
         bool IsValid(string cmd);

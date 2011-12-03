@@ -4,13 +4,12 @@ using System.Linq;
 
 namespace Adventure
 {
-    class PrayCommand : ICommand
+    class PrayCommand : BaseSimpleCommand
     {
-        public bool IsValid(string cmd)
-        {
-            return cmd.ToLower() == "pray".ToLower();
-        }
-        public void Execute(string cmd)
+        public PrayCommand()
+            : base("pray") { }
+
+        public override void Execute(string cmd)
         {
             Console.WriteLine("You pray for God's guidance.");
         }
