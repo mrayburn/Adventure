@@ -8,7 +8,7 @@ namespace Adventure
     {
         public bool IsValid(string cmd)
         {
-            return cmd == "pray";
+            return cmd.ToLower() == "pray".ToLower();
         }
         public void Execute(string cmd)
         {

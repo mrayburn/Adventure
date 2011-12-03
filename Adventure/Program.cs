@@ -34,7 +34,7 @@ namespace Adventure
                 
                 
                 if (cmd != null) cmd.Execute(currentLine);
-            } while (currentLine != "exit");
+            } while (currentLine.ToLower() != "exit".ToLower());
         }
     }
 }
