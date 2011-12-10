@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Commands\BaseSimpleCommand.cs" />
     <Compile Include="Commands\DanceCommand.cs" />
+    <Compile Include="Commands\DbEmoteCommand.cs" />
     <Compile Include="Commands\EmoteCommand.cs" />
     <Compile Include="Commands\FenceCommand.cs" />
     <Compile Include="GameLoop.cs" />

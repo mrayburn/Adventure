@@ -10,7 +10,7 @@ namespace Adventure
         static void Main(string[] args)
         {
             List<ICommand> cmdList = new List<ICommand>();
-            cmdList.Add(new EmoteCommand());
+            cmdList.Add(new DbEmoteCommand());
 
             //cmdList.Add(new LaughCommand());
             //cmdList.Add(new DanceCommand());
