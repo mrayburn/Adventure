@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EnumerableExtensions.cs" />
     <Compile Include="Commands\BaseSimpleCommand.cs" />
     <Compile Include="Commands\DanceCommand.cs" />
     <Compile Include="Commands\DbEmoteCommand.cs" />
